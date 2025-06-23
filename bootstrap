@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -e
+
+DOTFILES_DIR="$HOME/dzconfig"
+CONFIG_DIR="$HOME/.config"
+configs=("nvim" "waybar" "kitty" "hypr")
+
+FORCE=false
+[ "$1" = "--force" ] && FORCE=true
+
+# Ensure submodules are initialized
+if [ ! -d "$DOTFILES_DIR/nvim/.git" ]; then
+  echo "Missing submodules. Initializing..."
+  git -C "$DOTFILES_DIR" submodule update --init --recursive
+fi
+
+for folder in "${configs[@]}"; do
+  src="$DOTFILES_DIR/$folder"
+  dest="$CONFIG_DIR/$folder"
+
+  if [ -L "$dest" ]; then
+    echo "Symlink exists: $dest"
+  elif [ -d "$dest" ]; then
+    if [ "$FORCE" = true ]; then
+      echo "Removing existing directory: $dest"
+      rm -rf "$dest"
+      ln -s "$src" "$dest"
+      echo "Linked $dest -> $src"
+    else
+      echo "Directory exists and is not a symlink: $dest (skipping)"
+    fi
+  else
+    ln -s "$src" "$dest"
+    echo "Linked $dest -> $src"
+  fi
+done
+
