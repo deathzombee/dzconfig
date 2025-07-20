@@ -116,9 +116,9 @@
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
-      "",
+      "",
       "",
-      ""
+      ""
     ]
   },
 
@@ -211,6 +211,7 @@
     "format-icons": {
       "spotify": "",
       "default": "🎜"
+      "vlc": "󰕼"
     },
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
@@ -222,6 +223,7 @@
       "spotify": "",
       "firefox": "",
       "default": "🎵"
+      "vlc":"󰕼"
     },
     "max-length": 80,
     "interval": 2,
@@ -237,9 +239,9 @@
     "format": "{name}: {icon}",
     "format-icons": {
       "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
+      "2": "",
+      "3": "",
+      "4": "",
       "5": "",
       "urgent": "",
       "focused": "",
