@@ -190,8 +190,8 @@
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -210,7 +210,7 @@
     "max-length": 40,
     "format-icons": {
       "spotify": "",
-      "default": "🎜"
+      "default": "🎜",
       "vlc": "󰕼"
     },
     "escape": true,
@@ -222,7 +222,7 @@
     "player-icons": {
       "spotify": "",
       "firefox": "",
-      "default": "🎵"
+      "default": "🎵",
       "vlc":"󰕼"
     },
     "max-length": 80,
